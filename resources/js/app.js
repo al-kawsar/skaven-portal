@@ -6,6 +6,7 @@ import Lara from "@primevue/themes/lara";
 import Ripple from "primevue/ripple";
 import "primeicons/primeicons.css";
 import { ZiggyVue, route } from "ziggy-js";
+import ToastService from "primevue/toastservice";
 
 createInertiaApp({
     resolve: (name) => {
@@ -17,6 +18,7 @@ createInertiaApp({
             .use(plugin)
             .mixin({ methods: { route } })
             .use(ZiggyVue)
+            .use(ToastService)
             .use(PrimeVue, {
                 ripple: true,
                 theme: {
