@@ -21,6 +21,7 @@ class LoginController extends Controller
             if (!auth()->attempt($credentials))
                 throw new \Exception('Email atau Password Salah!', 400);
 
+            $request->session()->regenerate();
             return response()->json([
                 'message' => 'Login Successfull'
             ], 200);
