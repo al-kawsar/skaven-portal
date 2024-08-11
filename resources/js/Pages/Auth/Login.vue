@@ -1,15 +1,13 @@
-<script>
-export default {
-  layout: AuthLayout,
-};
-</script>
 <script setup>
+import AuthLayout from "../../layouts/AuthLayout.vue";
 import { ref } from "vue";
 import { useToast } from "primevue/usetoast";
 import InputText from "primevue/inputtext";
 import Button from "primevue/button";
-import AuthLayout from "../../layouts/AuthLayout.vue";
+import { router } from "@inertiajs/vue3";
 import axios from "axios";
+
+defineOptions({ layout: AuthLayout });
 
 const form = ref({});
 const isLoading = ref(false);
@@ -20,10 +18,9 @@ const login = async () => {
   axios
     .post(route("auth.login.post"), form.value)
     .then((res) => {
-      window.location.reload();
+      router.get(route("app.dashboard"));
     })
     .catch((err) => {
-      console.log(err);
       toast.add({
         severity: "error",
         summary: "Gagal",
@@ -39,6 +36,8 @@ const login = async () => {
 
 <template>
   <div class="card">
+    <h2 class="font-bold text-3xl mb-6">Login</h2>
+
     <form @submit.prevent="login" class="flex flex-col md:flex-row">
       <div class="w-full flex flex-col justify-center gap-6">
         <div class="flex flex-col gap-2">
@@ -49,7 +48,7 @@ const login = async () => {
             required
             v-model="form.email"
             type="email"
-            class="w-full"
+            class="focus:border-blue-600"
             autocomplete="email"
           />
         </div>
@@ -60,13 +59,15 @@ const login = async () => {
             v-model="form.password"
             required
             type="password"
-            class="w-full"
+            class="focus:border-blue-600"
             autocomplete="current-password"
           />
         </div>
         <Button
-          :label="isLoading ? 'Loading...' : 'Login'"
+          label="Login"
+          severity="info"
           :disabled="isLoading"
+          :loading="isLoading"
           required
           type="submit"
           class="w-full mx-auto mt-3"
