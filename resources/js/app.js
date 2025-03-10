@@ -1,14 +1,21 @@
 import { createApp, h } from "vue";
 import { createInertiaApp, Link, Head } from "@inertiajs/vue3";
+import { ZiggyVue, route } from "ziggy-js";
 
 import PrimeVue from "primevue/config";
-import Lara from "@primevue/themes/lara";
 import Ripple from "primevue/ripple";
 import "primeicons/primeicons.css";
-import { ZiggyVue, route } from "ziggy-js";
 import ToastService from "primevue/toastservice";
+import Aura from "@primevue/themes/aura";
 
 createInertiaApp({
+    progress: {
+        color: "#3B82F6",
+
+        includeCSS: true,
+
+        showSpinner: true,
+    },
     resolve: (name) => {
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
         return pages[`./Pages/${name}.vue`];
@@ -20,13 +27,15 @@ createInertiaApp({
             .use(ZiggyVue)
             .use(ToastService)
             .use(PrimeVue, {
-                ripple: true,
                 theme: {
-                    preset: Lara,
+                    preset: Aura,
                     options: {
                         prefix: "p",
                         darkModeSelector: "light",
-                        cssLayer: false,
+                        cssLayer: {
+                            name: "primevue",
+                            order: "tailwind-base, primevue, tailwind-utilities",
+                        },
                     },
                 },
             })
