@@ -6,7 +6,6 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "@headlessui/tailwindcss": "^0.2.1",
         "@vitejs/plugin-vue": "^5.0.5",
         "autoprefixer": "^10.4.19",
         "axios": "^1.7.2",
@@ -16,10 +15,14 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "@headlessui/vue": "^1.7.22",
         "@inertiajs/vue3": "^1.2.0",
         "@primevue/themes": "^4.0.0",
         "primeicons": "^7.0.0",
-        "primevue": "^4.0.0"
+        "primevue": "^4.0.0",
+        "tailwind-scrollbar": "^3.1.0",
+        "tailwind-scrollbar-hide": "^1.1.7",
+        "tailwindcss-primeui": "^0.3.4",
+        "uniqolor": "^1.1.1",
+        "vue-search-select": "^3.2.0"
     }
 }
