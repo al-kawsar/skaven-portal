@@ -4,10 +4,11 @@ import Toast from "primevue/toast";
 <template>
   <Toast />
   <div
-    class="w-screen overflow-x-hidden h-screen bg-slate-50 flex justify-center overflow-y-hidden"
+    class="w-screen overflow-x-hidden h-screen bg-slate-100 flex justify-center items-center overflow-y-hidden"
   >
-    <div class="py-16 px-12 md:w-1/3 gap-12 flex flex-col justify-center bg-white">
-      <h2 class="font-bold text-3xl">Login</h2>
+    <div
+      class="w-full sm:w-[80%] shadow border p-4 md:p-8 md:w-1/2 lg:w-1/3 gap-12 flex flex-col justify-center bg-white"
+    >
       <slot />
     </div>
   </div>
