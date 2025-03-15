@@ -26,4 +26,16 @@ class LoginRequest extends FormRequest
             'password' => 'required|min:8|max:255',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.max' => 'Email tidak boleh lebih dari 255 karakter.',
+            'password.required' => 'Password wajib diisi.',
+            'password.min' => 'Password harus terdiri dari minimal 8 karakter.',
+            'password.max' => 'Password tidak boleh lebih dari 255 karakter.',
+        ];
+    }
 }
