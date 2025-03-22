@@ -9,7 +9,7 @@ use Laravel\Scout\Searchable;
 
 class Student extends Model
 {
-    use HasFactory, Searchable;
+    use HasFactory;
 
     protected $guarded = ['id'];
 

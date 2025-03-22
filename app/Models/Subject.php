@@ -8,7 +8,7 @@ use Laravel\Scout\Searchable;
 
 class Subject extends Model
 {
-    use HasFactory, Searchable;
+    use HasFactory;
 
     protected $guarded = ['id'];
 
