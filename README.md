@@ -1,4 +1,4 @@
-# SKAVEN PORTAl
+# SKAVEN PORTAL
 
 Aplikasi web yang dirancang untuk mengelola berbagai aspek kehidupan akademik di **skaven-portal**. Anda dapat mengelola **siswa**, **guru**, **kelas**, **ujian**, **jadwal**, **nilai**, dan banyak lagi secara efisien dan mudah.
 
